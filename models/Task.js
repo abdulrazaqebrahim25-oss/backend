@@ -23,9 +23,7 @@ const taskSchema = new mongoose.Schema({
         type: String,
         enum: ['low', 'medium', 'high'],
         default: 'medium'
-    }, 
-    
-    timestamps: true, 
+    },  
 
     username: {
         type: mongoose.Schema.Types.ObjectId,
@@ -37,7 +35,7 @@ const taskSchema = new mongoose.Schema({
         ref: 'Category'
     }
     
-})
+},{timestamps: true})
 
 const Task = mongoose.model('Task',taskSchema)
 
