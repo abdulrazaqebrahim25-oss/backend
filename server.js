@@ -8,6 +8,7 @@ const logger = require('morgan');
 const authRouter = require('./controllers/auth.routes');
 const verifyToken = require('./middleware/verify-token');
 const reminderRouter = require('./controllers/reminder.routes')
+const taskRouter = require('./controllers/task.routes')
 
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 // Routes go here
 app.use('/auth', authRouter);
 app.use('/reminder', reminderRouter)
+app.use('/tasks',taskRouter);
 
 
 app.listen(3000, () => {
