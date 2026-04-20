@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('../models/User')
 const Category =require('../models/Category')
+const Reminder = require('../models/Reminder')
 
 const taskSchema = new mongoose.Schema({
     title: {type: String, 
@@ -21,7 +22,7 @@ const taskSchema = new mongoose.Schema({
     },
     priority: {
         type: String,
-        enum: ['low', 'medium', 'high'],
+        enum: ['very-low','low', 'medium', 'high','urgent'],
         default: 'medium'
     },  
 
@@ -31,8 +32,9 @@ const taskSchema = new mongoose.Schema({
     }, 
 
     category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category'
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        default: null
     }
     
 },{timestamps: true})
