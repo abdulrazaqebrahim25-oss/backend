@@ -10,6 +10,7 @@ const verifyToken = require('./middleware/verify-token');
 const reminderRouter = require('./controllers/reminder.routes')
 const taskRouter = require('./controllers/task.routes')
 const categoryRouter = require('./controllers/category.routes')
+const aiRoutes = require('./controllers/ai.routes');
 
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -26,7 +27,8 @@ app.use(logger('dev'));
 app.use('/auth', authRouter);
 app.use('/reminder', reminderRouter);
 app.use('/tasks',taskRouter);
-app.use('/category', categoryRouter)
+app.use('category', categoryRouter)
+app.use('/ai', aiRoutes);
 
 
 app.listen(3000, () => {
