@@ -26,7 +26,7 @@ app.use(logger('dev'));
 app.use('/auth', authRouter);
 app.use('/reminder', reminderRouter);
 app.use('/tasks',taskRouter);
-app.use('category', categoryRouter)
+app.use('/category', categoryRouter)
 
 
 app.listen(3000, () => {

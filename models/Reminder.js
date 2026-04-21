@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const reminderSchema = new mongoose.Schema({
-  remindat: {
+  remindAt: {
     type: Date,
     required: true
   },
