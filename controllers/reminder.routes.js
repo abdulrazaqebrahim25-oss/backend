@@ -4,9 +4,12 @@ const Reminder = require('../models/Reminder');
 
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body)
     const newReminder = await Reminder.create(req.body);
     res.status(201).json(newReminder);
   } catch (err) {
+    console.log(err)
+
     res.status(500).json(err);
   }
 });
@@ -16,6 +19,7 @@ router.get('/task/:taskId', async (req, res) => {
     const reminders = await Reminder.find({ taskID: req.params.taskId });
     res.status(200).json(reminders);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
