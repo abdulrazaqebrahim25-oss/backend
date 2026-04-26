@@ -25,9 +25,9 @@ app.use(logger('dev'));
 
 // Routes go here
 app.use('/auth', authRouter);
-app.use('/reminder', reminderRouter);
+app.use('/reminders', reminderRouter);
 app.use('/tasks',taskRouter);
-app.use('category', categoryRouter)
+app.use('/category', categoryRouter)
 app.use('/ai', aiRoutes);
 
 
